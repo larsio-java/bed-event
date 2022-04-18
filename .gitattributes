@@ -1,2 +1,24 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+
+        System.out.println(ChatColor.GREEN + "a player joined the server");
+        event.setJoinMessage(ChatColor.AQUA + "Welkom in de server");
+    }
+    @EventHandler
+    public void onPlayerkick(PlayerKickEvent event1) {
+        System.out.println(ChatColor.RED + "A player just got kicked out");
+    }
+    @EventHandler
+    public void onLeaveBed(PlayerBedLeaveEvent event){
+
+        Player player = event.getPlayer();
+        player.setFoodLevel(1);
+    }
+    @EventHandler
+    public void onEnterBed(PlayerBedEnterEvent event){
+
+        Player player = event.getPlayer();
+        player.setHealth(20);
+    }
